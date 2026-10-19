@@ -49,9 +49,9 @@ function render(list = loans) {
   });
   // TODO Q4-B: #summary에 전체 건수와 반납완료 건수 출력
 
+  const returnedCount = loans.filter((loan) => loan.returned).length;
 
-
-  summary.textContent = `총 ${loans.length}건의 대여 기록`;
+  summary.textContent = `전체 ${loans.length}건 / 반납완료 ${returnedCount}건`;
 }
 
 function toggleReturn(id) {
@@ -69,6 +69,31 @@ function removeLoan(id) {
 
 // TODO Q3-B: submit 이벤트 처리, 유효성 검사, 새로운 객체 추가, reset, 메시지 및 render
 
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const borrower = form.elements.borrower.value.trim();
+  const equipment = form.elements.equipment.value.trim();
+  const category = form.elements.category.value;
+  const dueDate = form.elements.dueDate.value;
+
+  if (borrower.length < 2 || !equipment || !category || !dueDate) return;
+
+  const loan = {
+    id: nextId++,
+    borrower: borrower,
+    equipment: equipment,
+    category: category,
+    dueDate: dueDate,
+    returned: false
+  };
+
+  loans.push(loan);
+  form.reset();
+
+  message.textContent = "대여 등록이 완료되었습니다.";
+  render();
+});
 
 
 // TODO Q5-B: #categoryFilter의 change 이벤트, 분류별 filter 및 render
