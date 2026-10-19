@@ -16,9 +16,9 @@
     <h2>대여 정보 등록</h2>
     <form id="loanForm">
       <div class="mb-3">
-        <!-- Bootstrap form-label 클래스로 입력 항목의 레이블을 꾸밉니다. -->
+        <!-- Bootstrap form-label -->
         <label for="borrower" class="form-label">대여자</label>
-        <!-- form-control과 minlength, required로 입력 스타일과 유효성 검사를 적용합니다. -->
+        <!-- form-control과 minlength, required-->
         <input id="borrower" name="borrower" type="text" class="form-control" minlength="2" required>
       </div>
       <div class="mb-3">
@@ -26,7 +26,7 @@
         <input id="equipment" name="equipment" type="text" class="form-control" required>
       </div>
       <!-- TODO Q3-A: 분류 select, 반납예정일 date 입력 요소 작성 -->
-      <!-- 분류 선택 항목을 추가하고 필수 선택으로 설정합니다. -->
+      <!-- 분류 선택 항목을 추가, 필수 선택으로 설정 -->
       <div class="mb-3">
         <label for="category" class="form-label">분류</label>
         <select id="category" name="category" class="form-select" required>
