@@ -16,8 +16,10 @@
     <h2>대여 정보 등록</h2>
     <form id="loanForm">
       <div class="mb-3">
-        <label for="borrower">대여자</label>
-        <input id="borrower" name="borrower" type="text" required>
+        <!-- Bootstrap form-label 클래스로 입력 항목의 레이블을 꾸밉니다. -->
+        <label for="borrower" class="form-label">대여자</label>
+        <!-- form-control과 minlength, required로 입력 스타일과 유효성 검사를 적용합니다. -->
+        <input id="borrower" name="borrower" type="text" class="form-control" minlength="2" required>
       </div>
       <div class="mb-3">
         <label for="equipment">기자재명</label>
