@@ -1,0 +1,12 @@
+body { background: #f5f6f8; color: #232d3b; }
+h1 { font-size: 1.8rem; margin-bottom: 12px; }
+h2 { font-size: 1.25rem; margin-bottom: 16px; }
+.panel { background: white; padding: 12px; margin-bottom: 16px; }
+/* TODO Q2-B: .panel에 서로 다른 CSS 속성 3개 이상 직접 적용하거나 변경 */
+
+
+
+#loanTable { width: 100%; }
+#loanTable th, #loanTable td { padding: 9px; border-bottom: 1px solid #ddd; }
+#message { margin-top: 12px; }
+/* TODO Q2-C: 필요한 경우 Form 내부 요소 스타일 직접 작성 */
