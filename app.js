@@ -10,6 +10,8 @@ const form = document.querySelector("#loanForm");
 const rows = document.querySelector("#loanRows");
 const summary = document.querySelector("#summary");
 const message = document.querySelector("#message");
+// 분류 필터 select 요소를 가져옵니다.
+const categoryFilter = document.querySelector("#categoryFilter");
 
 function render(list = loans) {
   rows.innerHTML = "";
