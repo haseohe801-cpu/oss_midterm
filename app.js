@@ -24,19 +24,23 @@ function render(list = loans) {
     });
     const statusCell = document.createElement("td");
     // TODO Q4-A: loan.returned 값에 따라 상태 문구와 Bootstrap badge 클래스 설정
-
-
-    statusCell.textContent = loan.returned ? "완료" : "진행중";
+    // 반납 여부에 따라 배지 색상과 상태 문구를 설정합니다.
+    const badge = document.createElement("span");
+    badge.className = loan.returned ? "badge text-bg-success" : "badge text-bg-warning";
+    badge.textContent = loan.returned ? "완료" : "진행중";
+    statusCell.appendChild(badge);
     tr.appendChild(statusCell);
 
     const actions = document.createElement("td");
     const toggle = document.createElement("button");
     toggle.type = "button";
+    toggle.className = "btn btn-sm btn-outline-primary me-2";
     toggle.textContent = loan.returned ? "대여중으로" : "반납 처리";
     toggle.addEventListener("click", () => toggleReturn(loan.id));
     actions.appendChild(toggle);
     const remove = document.createElement("button");
     remove.type = "button";
+    remove.className = "btn btn-sm btn-outline-danger";
     remove.textContent = "삭제";
     remove.addEventListener("click", () => removeLoan(loan.id));
     actions.appendChild(remove);
