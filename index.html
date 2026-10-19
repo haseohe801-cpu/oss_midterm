@@ -22,19 +22,46 @@
         <input id="borrower" name="borrower" type="text" class="form-control" minlength="2" required>
       </div>
       <div class="mb-3">
-        <label for="equipment">기자재명</label>
-        <input id="equipment" name="equipment" type="text" required>
+        <label for="equipment" class="form-label">기자재명</label>
+        <input id="equipment" name="equipment" type="text" class="form-control" required>
       </div>
       <!-- TODO Q3-A: 분류 select, 반납예정일 date 입력 요소 작성 -->
-      <button type="submit" id="addBtn">대여 등록</button>
+      <!-- 분류 선택 항목을 추가하고 필수 선택으로 설정합니다. -->
+      <div class="mb-3">
+        <label for="category" class="form-label">분류</label>
+        <select id="category" name="category" class="form-select" required>
+          <option value="">분류 선택</option>
+          <option value="전자기기">전자기기</option>
+          <option value="촬영기기">촬영기기</option>
+          <option value="음향기기">음향기기</option>
+        </select>
+      </div>
+      <!-- 반납예정일은 날짜 입력과 필수 입력 검사를 적용합니다. -->
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">반납예정일</label>
+        <input id="dueDate" name="dueDate" type="date" class="form-control" required>
+      </div>
+      <!-- btn btn-success 클래스로 등록 버튼을 꾸밉니다. -->
+      <button type="submit" id="addBtn" class="btn btn-success">대여 등록</button>
     </form>
     <p id="message" aria-live="polite"></p>
   </section>
   <section class="panel">
     <h2>대여 현황</h2>
     <!-- TODO Q5-A: 분류 필터 select 추가 (id="categoryFilter") -->
+    <!-- 목록을 필터링 -->
+    <div class="mb-3">
+      <label for="categoryFilter" class="form-label">분류 필터</label>
+      <select id="categoryFilter" class="form-select">
+        <option value="전체">전체</option>
+        <option value="전자기기">전자기기</option>
+        <option value="촬영기기">촬영기기</option>
+        <option value="음향기기">음향기기</option>
+      </select>
+    </div>
     <div class="table-responsive">
-      <table id="loanTable">
+      <!-- table-striped는 줄무늬, table-hover -->
+      <table id="loanTable" class="table table-striped table-hover">
         <thead><tr><th>번호</th><th>대여자</th><th>기자재</th><th>분류</th><th>반납예정일</th><th>상태</th><th>관리</th></tr></thead>
         <tbody id="loanRows"></tbody>
       </table>
