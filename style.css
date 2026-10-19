@@ -4,7 +4,14 @@ h2 { font-size: 1.25rem; margin-bottom: 16px; }
 .panel { background: white; padding: 12px; margin-bottom: 16px; }
 /* TODO Q2-B: .panel에 서로 다른 CSS 속성 3개 이상 직접 적용하거나 변경 */
 
-
+.panel {
+  background-color: white;
+  color: #232d3b;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #dce1e8;
+  border-radius: 8px;
+}
 
 #loanTable { width: 100%; }
 #loanTable th, #loanTable td { padding: 9px; border-bottom: 1px solid #ddd; }
